@@ -9,4 +9,4 @@ The program is called as follows:
 python3 main.py DATA.csv
 ```
 
-Where `data.csv` is your .csv file. *Please note that Python 3.10 or above must be used* due to the use of match-case statements.
+Where `DATA.csv` is your .csv file. *Please note that Python 3.10 or above must be used* due to the use of match-case statements.

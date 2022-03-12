@@ -22,12 +22,13 @@ st_dev = Statistic("Standard deviation",
         ["variable"],
         lambda args: pow(sum((item - mean.func(args)) ** 2 for item in args[0])  / len(args[0]), 0.5))
 
-# TODO
-"""
+sample_st_dev = Statistic("Sample standard deviation",
+        ["variable"],
+        lambda args: pow(sum((item - mean.func(args)) ** 2 for item in args[0]) / (len(args[0]) - 1), 0.5))
+
 pcc = Statistic("Pearson correlation coefficient",
     ["first variable", "second variable"],
-    lambda args:)
-"""
+    lambda args: (sum(args[0][i] * args[1][i] for i in range(len(args[0]))) - (len(args[0]) * mean.func([args[0]]) * mean.func([args[1]]))) / ((len(args[0]) - 1) * sample_st_dev.func([args[0]]) * sample_st_dev.func([args[1]])) )
 
 def main(argv):
     variables_list = []
